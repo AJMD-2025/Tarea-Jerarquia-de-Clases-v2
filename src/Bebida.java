@@ -2,13 +2,13 @@ public class Bebida extends Producto {
 
     private double impuesto;
 
-    public Bebida(String codigo, String nombre, double precio, int cantidad, double impuesto) {
-        super(codigo, nombre, precio, cantidad);
+    public Bebida(String nombre, double precio, int cantidad, double impuesto) {
+        super(nombre, precio, cantidad);
         this.impuesto = impuesto;
     }
 
     @Override
-    public double calcularPrecioFinal() {
+    public double calcularPrecio() {
         return getPrecio() + (getPrecio() * impuesto);
     }
 
@@ -16,7 +16,7 @@ public class Bebida extends Producto {
         return getPrecio() * impuesto;
     }
 
-    public double calcularPrecioPorCantidad(int cantidad) {
-        return calcularPrecioFinal() * cantidad;
+    public void mostrarTipo() {
+        System.out.println("Tipo: Bebida");
     }
 }

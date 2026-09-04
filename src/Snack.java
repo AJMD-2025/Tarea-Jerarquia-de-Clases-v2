@@ -2,13 +2,13 @@ public class Snack extends Producto {
 
     private double recargo;
 
-    public Snack(String codigo, String nombre, double precio, int cantidad, double recargo) {
-        super(codigo, nombre, precio, cantidad);
+    public Snack(String nombre, double precio, int cantidad, double recargo) {
+        super(nombre, precio, cantidad);
         this.recargo = recargo;
     }
 
     @Override
-    public double calcularPrecioFinal() {
+    public double calcularPrecio() {
         return getPrecio() + (getPrecio() * recargo);
     }
 
@@ -16,7 +16,7 @@ public class Snack extends Producto {
         return getPrecio() * recargo;
     }
 
-    public double calcularPrecioPorCantidad(int cantidad) {
-        return calcularPrecioFinal() * cantidad;
+    public void mostrarTipo() {
+        System.out.println("Tipo: Snack");
     }
 }
